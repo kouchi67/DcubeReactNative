@@ -14,6 +14,7 @@ export default class ActionButton extends Component {
     return (
       <View>
         <TouchableHighlight
+          underlayColor={'#A3F6FE'}
           onPress={this.props.onPress}
           style={styles.button}>
           <Text>addItem</Text>

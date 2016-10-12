@@ -84,13 +84,13 @@ export default class FirebaseListComponent extends Component {
         <ListView
           style={styles.listview}
           dataSource={this.state.dataSource}
-          renderRow={(item) =>
-            <View style={styles.row}>
+          renderRow={(item, sectionID, rowID) =>
+            <View key={item._key} style={styles.row}>
               <Text>{item.title}</Text>
             </View>
           }
           renderSeparator={(sectionID, rowID, adjacentRowHighlighted) =>
-            <View style={styles.separator} />
+            <View key={rowID} style={styles.separator} />
           }
         />
         <ActionButton style={styles.button} onPress={this._addItem.bind(this)} />

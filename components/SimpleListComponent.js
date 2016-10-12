@@ -29,13 +29,13 @@ export default class SimpleListComponent extends Component {
       <ListView
         style={styles.listview}
         dataSource={this.state.dataSource}
-        renderRow={(item) =>
-          <View style={styles.row} key={item._key}>
-            <Text>{item}</Text>
+        renderRow={(rowData, sectionID, rowID) =>
+          <View key={rowID} style={styles.row}>
+            <Text>{rowData}</Text>
           </View>
         }
         renderSeparator={(sectionID, rowID, adjacentRowHighlighted) =>
-          <View style={styles.separator} />
+          <View key={rowID} style={styles.separator} />
         }
       />
     );
