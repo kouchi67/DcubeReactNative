@@ -29,11 +29,11 @@ export default class FirebaseListComponent extends Component {
         rowHasChanged: (row1, row2) => row1 !== row2,
       })
     };
-    this.itemsRef = this.getRef().child('items');
+    this.itemsRef = firebaseApp.database().ref().child('items');
   }
 
-  getRef() {
-    return firebaseApp.database().ref();
+  componentDidMount() {
+    this.listenForItems(this.itemsRef);
   }
 
   listenForItems(itemsRef) {
@@ -53,10 +53,6 @@ export default class FirebaseListComponent extends Component {
       });
 
     });
-  }
-
-  componentDidMount() {
-    this.listenForItems(this.itemsRef);
   }
 
   _addItem() {
