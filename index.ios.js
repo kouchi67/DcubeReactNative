@@ -26,7 +26,7 @@ class DcubeReactNative extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <FirebaseListComponent style={styles.listview} />
+        <SimpleListComponent style={styles.listview} />
       </View>
     );
   }
